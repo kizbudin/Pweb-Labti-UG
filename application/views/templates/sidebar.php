@@ -18,14 +18,9 @@
             </div>
 
             <li class="nav-item ">
-                <a class="nav-link pb-0" href="<?= base_url('mahasiswa'); ?>">
-                    <i class="fas fa-address-book"></i>
-                    <span>Daftar Mahasiswa</span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="<?= base_url('mahasiswa/jadwal'); ?>">
+                <a class="nav-link pb-0" href="<?= base_url('jadwal'); ?>">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>Jadwal</span></a>
+                    <span>Jadwal Kuliah</span></a>
             </li>
 
             <!-- Divider -->

@@ -46,11 +46,11 @@ class Auth extends CI_Controller
                 $this->session->set_userdata($data);
                 redirect('admin');
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Salah!</div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">User tidak terdaftar!</div>');
             redirect('auth');
         }
     }
@@ -71,11 +71,11 @@ class Auth extends CI_Controller
 
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[user.username]', [
-            'is_unique' => 'This Username has already registered!'
+            'is_unique' => 'User Sudah terdaftar!'
         ]);
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
-            'matches' => 'Password dont match!',
-            'min_length' => 'Password too short!'
+            'matches' => 'Password tidak cocok!',
+            'min_length' => 'Password terlalu pendek!'
         ]);
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
@@ -97,7 +97,7 @@ class Auth extends CI_Controller
 
             $this->db->insert('user', $data);
 
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! your account has been created.</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun berhasil di buat.</div>');
             redirect('auth');
         }
     }
