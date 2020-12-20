@@ -1,9 +1,7 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
-
     <div class="row">
         <div class="col-lg">
             <?php if (validation_errors()) : ?>
@@ -14,7 +12,7 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <!-- Start DataTables jadwalMahasiswa -->
+            <!-- Start DataTables Mata Kuliah -->
             <div class="card shadow">
                 <div class="card-header pt-3">
                     <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newJadwalModal">Tambah Jadwal baru</a>
@@ -44,13 +42,13 @@
                                         <td><?= $jadwal['dosen'] ?></td>
                                         <td>
                                             <!-- Button ubahJadwal -->
-                                            <a class="btn btn-primary btn-sm" href="#modalUbahJadwal" onclick="$('#modalUbahJadwal #formUbahJadwal').attr('action', '<?= site_url('mahasiswa/ubahjadwal/' . $jadwal['id']) ?>')" data-toggle="modal" data-target="">
+                                            <a class="btn btn-primary btn-sm" href="#modalUbahJadwal" onclick="$('#modalUbahJadwal #formUbahJadwal').attr('action', '<?= site_url('jadwal/ubahjadwal/' . $jadwal['id']) ?>')" data-toggle="modal" data-target="">
                                                 <i class="fa fa-edit" aria-hidden="true"></i>
                                             </a>
                                             <!-- End Button ubahJadwal -->
 
                                             <!-- Button deleteJadwal -->
-                                            <a class="btn btn-danger btn-sm" href="#modalDelete" onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('mahasiswa/hapusjadwal/' . $jadwal['id']) ?>')" data-toggle="modal" data-target="">
+                                            <a class="btn btn-danger btn-sm" href="#modalDelete" onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('jadwal/hapusjadwal/' . $jadwal['id']) ?>')" data-toggle="modal" data-target="">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
                                             </a>
                                             <!-- Button deleteJadwal -->
@@ -87,7 +85,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('mahasiswa/jadwal'); ?>" method="post">
+            <form action="<?= base_url('jadwal/index'); ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="text" class="form-control" id="matakuliah" name="matakuliah" placeholder="Mata Kuliah">
@@ -148,7 +146,7 @@
             </div>
 
 
-            <form action="<?= site_url('mahasiswa/ubahjadwal'); ?>" method="post" id="formUbahJadwal">
+            <form action="<?= site_url('jadwal/ubahjadwal'); ?>" method="post" id="formUbahJadwal">
                 <div class="modal-body">
                     <input type="hidden" name="id" value="<?= $jadwal['id']; ?>">
 

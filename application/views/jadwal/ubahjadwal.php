@@ -13,7 +13,7 @@
 
 
             <?= $this->session->flashdata('message'); ?>
-            <a class="btn btn-outline-primary" href="<?= base_url('mahasiswa/jadwal') ?>" role="button">Kembali</a>
+            <a class="btn btn-outline-primary" href="<?= base_url('jadwal/index') ?>" role="button">Kembali</a>
         </div>
     </div>
 </div>
